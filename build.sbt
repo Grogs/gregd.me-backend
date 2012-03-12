@@ -14,7 +14,16 @@ libraryDependencies ++= Seq(
   "org.scalatra" %% "scalatra-specs2" % "2.0.3" % "test",
   "ch.qos.logback" % "logback-classic" % "1.0.0" % "runtime",
   "org.eclipse.jetty" % "jetty-webapp" % "7.5.4.v20111024" % "container",
-  "javax.servlet" % "servlet-api" % "2.5" % "provided"
+  "javax.servlet" % "servlet-api" % "2.5" % "provided",
+  "javax.ws.rs" % "jsr311-api" % "1.1" % "provided" ,
+     "com.sun.jersey" % "jersey-core" % "1.2",
+     "com.sun.jersey" % "jersey-server" % "1.2",
+       "com.sun.jersey" % "jersey-json" % "1.2",
+  "org.codehaus.jackson" % "jackson-core-asl" % "1.8.1",
+  "org.codehaus.jackson" % "jackson-mapper-asl" % "1.8.1",
+  "org.codehaus.jackson" % "jackson-jaxrs" % "1.8.1",
+  "org.codehaus.jackson" % "jackson-xc" % "1.8.1",
+  "javax.persistence" % "persistence-api" % "1.0"
 )
 
 resolvers += "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
