@@ -23,7 +23,11 @@ libraryDependencies ++= Seq(
   "org.codehaus.jackson" % "jackson-mapper-asl" % "1.8.1",
   "org.codehaus.jackson" % "jackson-jaxrs" % "1.8.1",
   "org.codehaus.jackson" % "jackson-xc" % "1.8.1",
-  "javax.persistence" % "persistence-api" % "1.0"
+   "javax.persistence" % "persistence-api" % "1.0",
+   "org.eclipse.persistence" % "eclipselink" % "2.0.0",
+   "com.h2database" % "h2" % "1.3.164"
 )
 
 resolvers += "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
+
+resolvers += "EclipseLink Repo" at "http://download.eclipse.org/rt/eclipselink/maven.repo"

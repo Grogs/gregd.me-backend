@@ -2,15 +2,21 @@ package me.gregd.www.data
 import javax.persistence._
 import me.gregd.www.model.Tweet
 
-object TweetDAO {
+class TweetDAO {
 
-  @PersistenceContext
-  var em:EntityManager = _
+  var factory = Persistence.createEntityManagerFactory("dev")
+
+  def em():EntityManager = {
+    factory.createEntityManager();
+  }
 
   
-  def getTweets() {
-    val queryString = "SELECT * FROM tweets"
-    em.createQuery(queryString).getResultList().asInstanceOf[java.util.List[Tweet]]
+  def getTweets() = {
+    val queryString = "SELECT t FROM Tweet t"
+    em().createQuery(queryString).getResultList().asInstanceOf[java.util.List[Tweet]]
   }
   
 }
+
+
+  

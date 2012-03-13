@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
-  <persistence-unit name="chapter02PU" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="dev" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>me.gregd.Persist</class>
     <properties>
@@ -8,6 +8,7 @@
 <!--       <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/> -->
       <property name="eclipselink.jdbc.driver" value="org.h2.Driver"/>
       <property name="eclipselink.jdbc.url" value="jdbc:h2:~/test"/>
+      <property name="eclipselink.platform.class.name" value="org.eclipse.persistence.platform.database.H2Platform"></property>
 <!--       <property name="eclipselink.jdbc.user" value="APP"/> -->
 <!--       <property name="eclipselink.jdbc.password" value="APP"/> -->
     </properties>
