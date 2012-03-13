@@ -1,13 +1,5 @@
-1. Launch [SBT](http://code.google.com/p/simple-build-tool).
+Backend for my personal website, gregd.me. Currently in development/not used.
 
-        ./sbt
+My website is just going to be way to play with web technologies and just some sort of demonstratable output. As such, although based on the Scalatra base project, I've moved to using Java technologies; JAX-RS, JAXB, JPA 2.
 
-2. Run Jetty
 
-        container:start
-
-3. Go to http://localhost:8080/.
-
-4. Learn more at http://www.scalatra.org/stable/book.
-
-5. Happy hacking!
