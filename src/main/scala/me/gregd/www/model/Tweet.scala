@@ -3,7 +3,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import scala.reflect.BeanProperty
 import javax.persistence._
 
-@Entity @Table(name="tweets")
+@Entity
 @XmlRootElement
 class Tweet (
   

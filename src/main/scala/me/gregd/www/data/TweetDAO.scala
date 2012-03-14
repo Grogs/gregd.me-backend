@@ -16,6 +16,10 @@ class TweetDAO {
     em().createQuery(queryString).getResultList().asInstanceOf[java.util.List[Tweet]]
   }
   
+  def addTweet(t:Tweet) {
+    em().persist(t)
+  }
+  
 }
 
 
