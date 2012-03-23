@@ -8,7 +8,7 @@ import javax.persistence._
 class Tweet (
   
   @Id @Basic(optional = false)
-  @BeanProperty var id:Integer,
+  @BeanProperty var id:Long,
   
   @Column(name="screenname")
   @BeanProperty var screenName:String,
