@@ -6,7 +6,7 @@ object ScrobblesDAO {
 
   var scrobbles = collection.Map[Long, Scrobble]()
 
-  def all = scrobbles.values.toSeq
+  def all = scrobbles.values.toList
   
   def apply(id:Int) = scrobbles(id)
   

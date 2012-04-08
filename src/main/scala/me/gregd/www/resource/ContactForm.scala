@@ -14,7 +14,7 @@ import me.gregd.www.data._
 @Path("/contactform")
 class ContacForm {
   val mailProps = new Properties()
-  mailProps.load(new FileInputStream("/Users/grogs/Desktop/mail.properties"))
+  mailProps.load(new FileInputStream("/etc/mail.properties"))
   
   @POST
   @Consumes(Array(MediaType.APPLICATION_FORM_URLENCODED))

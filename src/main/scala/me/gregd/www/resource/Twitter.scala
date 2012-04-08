@@ -2,8 +2,7 @@ package me.gregd.www.resource
 
 import javax.ws.rs._
 import javax.ws.rs.core.MediaType
-import scala.collection.JavaConverters
-import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
 import me.gregd.www.model.Tweet
 import me.gregd.www.data.TweetDAO
 
@@ -14,8 +13,8 @@ class Twitter {
 
   @GET
   @Produces(Array(MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML))
-  def all(@QueryParam("since") since:String):java.util.List[Tweet] = {
-    tweets.all
+  def all(@QueryParam("since") since:String) = {
+    tweets.all.asJava
   }
 
   @POST
