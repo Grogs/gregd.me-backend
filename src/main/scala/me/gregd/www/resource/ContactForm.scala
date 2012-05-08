@@ -19,7 +19,7 @@ class ContacForm {
   @POST
   @Consumes(Array(MediaType.APPLICATION_FORM_URLENCODED))
   @Produces(Array(MediaType.APPLICATION_JSON))
-  def update(@FormParam("email") email:String, @FormParam("body") body:String) = {
+  def submit(@FormParam("email") email:String, @FormParam("body") body:String) = {
     try {
 	  sendEmail(from=email,body=body);
       """{"success": "Your message has been sent to my personal inbox. I'll get back to you soon."}"""
@@ -30,8 +30,10 @@ class ContacForm {
   }
   
   def sendEmail( //Using JavaMail API
-    from:String, to:String = "greg@dorrell.me",
-     subject:String = "Contact Form::", body:String 
+    from: String, 
+    to: String = "greg@dorrell.me",
+    subject: String = "Contact Form::", 
+    body: String 
   ) = {
     val message = new MimeMessage(
         Session.getInstance(mailProps,
