@@ -13,6 +13,7 @@ class Scrobble (
   @BeanProperty var song:String,
   @BeanProperty var album:String,
   @BeanProperty var artist:String,
+  @BeanProperty var image:String,
   @BeanProperty var time:String
 
-) {def this() = {this(0,"","","","")}}
+) {def this() = {this(0,"","","","","")}}

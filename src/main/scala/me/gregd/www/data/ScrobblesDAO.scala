@@ -31,10 +31,11 @@ object ScrobblesDAO {
 	val scrobblesXML = xml.XML.load("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=grogs&api_key=b25b959554ed76058ac220b7b2e0a026") 
 	val scrobbles = (scrobblesXML \ "recenttracks" \ "track") map { track =>
 	  new Scrobble(
-		  (track \ "date" \ "@uts" text).toLong,
+		  (track \ "date" \ "@uts").text.toLong,
 		  (track \ "name" text),
 		  (track \ "album" text),
 		  track \ "artist" text,
+		  ((track \ "image").filter(_.attributes.exists(_.value.text equals "large")).text),
 		  track \ "date" text
 	  )
 	}
