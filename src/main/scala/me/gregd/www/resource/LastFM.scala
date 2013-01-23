@@ -17,7 +17,7 @@ class LastFM {
   @Produces(Array(MediaType.TEXT_HTML))
   def getAlbums = {
     <div>
-	  {scrobbles.all.take(15).map(_.image).distinct map { img =>
+	  {scrobbles().take(15).map(_.image).distinct map { img =>
 	    <img class="lastfm album-cover" src={ img }/>
 	  }}
     </div>.toString
@@ -27,7 +27,7 @@ class LastFM {
   @GET
   @Produces(Array(MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML))
   def all(@QueryParam("since") since:String) = {
-    scrobbles.all.asJava 
+    scrobbles().asJava 
   }
 
   @POST

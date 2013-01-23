@@ -12,7 +12,7 @@ import me.gregd.www.model._
 import me.gregd.www.data._
 
 @Path("/contactform")
-class ContacForm {
+class ContactForm {
   val mailProps = new Properties()
   mailProps.load(new FileInputStream("/etc/mail.properties"))
   
