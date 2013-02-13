@@ -5,7 +5,7 @@ name := "greg.me backend"
 version := "0.1.0"
 
 //scalaVersion := "2.9.2"
-scalaVersion := "2.10.0-RC2"
+scalaVersion := "2.10.0"
 
 seq(webSettings :_*)
 
@@ -27,13 +27,14 @@ libraryDependencies ++= Seq(
   	"org.codehaus.jackson" % "jackson-core-asl" % "1.8.1",
   	"org.codehaus.jackson" % "jackson-mapper-asl" % "1.8.1",
   	"org.codehaus.jackson" % "jackson-jaxrs" % "1.8.1",
-  	"org.codehaus.jackson" % "jackson-xc" % "1.8.1",
+    "org.codehaus.jackson" % "jackson-xc" % "1.8.1",
+    "net.debasishg" % "sjson_2.10" % "0.19",
    	"javax.persistence" % "persistence-api" % "1.0",
    	"org.eclipse.persistence" % "eclipselink" % "2.0.0",
    	"javax.mail" % "mail" % "1.4.5-rc1",
    	"com.h2database" % "h2" % "1.3.164",
    	"com.orientechnologies" % "orient-commons" % "1.2.0",
-   	"com.orientechnologies" % "orientdb-core" % "1.2.0",
+    "com.orientechnologies" % "orientdb-core" % "1.2.0",
    	"org.apache.httpcomponents" % "httpclient" % "4.2.2"
 )
 
@@ -44,7 +45,8 @@ libraryDependencies ++= Seq(
 	"io.spray" % "spray-can" % "1.1-M5",
 	"io.spray" % "spray-client" % "1.1-M5",
 	"io.spray" % "spray-http" % "1.1-M5",
-	"io.spray" % "spray-io" % "1.1-M5",
+    "io.spray" % "spray-io" % "1.1-M5",
+"io.spray" % "spray-json_2.10" % "1.2.3" ,
 	"io.spray" % "spray-routing" % "1.1-M5",
 	"io.spray" % "spray-util" % "1.1-M5"
 )
@@ -55,7 +57,7 @@ seq(Revolver.settings: _*)
 resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 libraryDependencies +=
-  "com.typesafe.akka" %% "akka-actor" % "2.1.0-RC2" cross CrossVersion.full
+  "com.typesafe.akka" % "akka-actor_2.10" % "2.1.0"
 
 libraryDependencies += "com.novocode" % "junit-interface" % "0.10-M1" % "test"
 
