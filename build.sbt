@@ -46,7 +46,7 @@ libraryDependencies ++= Seq(
 	"io.spray" % "spray-client" % "1.1-M5",
 	"io.spray" % "spray-http" % "1.1-M5",
     "io.spray" % "spray-io" % "1.1-M5",
-"io.spray" % "spray-json_2.10" % "1.2.3" ,
+    "io.spray" % "spray-json_2.10" % "1.2.3" ,
 	"io.spray" % "spray-routing" % "1.1-M5",
 	"io.spray" % "spray-util" % "1.1-M5"
 )
