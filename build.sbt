@@ -18,7 +18,7 @@ libraryDependencies += "org.eclipse.jetty" % "jetty-webapp" % "9.0.0.M4"
 libraryDependencies ++= Seq(
   	//"org.scalatra" %% "scalatra" % "2.0.3",
   	"ch.qos.logback" % "logback-classic" % "1.0.0" % "runtime",
-  	"org.eclipse.jetty" % "jetty-webapp" % "7.5.4.v20111024" % "container",
+  	//"org.eclipse.jetty" % "jetty-webapp" % "7.5.4.v20111024" % "container",
   	"javax.servlet" % "servlet-api" % "2.5" % "provided",
  	"javax.ws.rs" % "jsr311-api" % "1.1" % "provided" ,
     "com.sun.jersey" % "jersey-core" % "1.2",
@@ -38,7 +38,15 @@ libraryDependencies ++= Seq(
    	"org.apache.httpcomponents" % "httpclient" % "4.2.2"
 )
 
+libraryDependencies += "org.eclipse.jetty" % "jetty-webapp" % "9.0.0.M5" % "container"
+
+libraryDependencies += "org.eclipse.jetty.websocket" % "websocket-server" % "9.0.0.M5"
+
+libraryDependencies += "com.fasterxml.jackson.module" % "jackson-module-scala_2.10" % "2.1.3"
+
 resolvers += "spray repo" at "http://repo.spray.io"
+
+
 
 libraryDependencies ++= Seq(
 	"io.spray" % "spray-caching" % "1.1-M5",
