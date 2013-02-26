@@ -1,5 +1,5 @@
 package me.gregd.www.model.cineworld
 
-class Showing {
+class Showing extends Event {
 
 }

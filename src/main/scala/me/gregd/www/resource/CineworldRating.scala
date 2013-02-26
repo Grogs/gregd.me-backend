@@ -86,7 +86,7 @@ class CineworldRating {
 	    val votes = response \ "rating_count" text
 	    val url = response \ "imdb_url" text
 	
-	    Movie( id, rating, votes, url )
+//	    Movie( id, rating, votes, url )
     }
   }
 
