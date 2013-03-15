@@ -28,7 +28,7 @@ object ScrobblesDAO {
   },0 , 10000)
 
   def updateTweets = {
-	val scrobblesXML = xml.XML.load("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=grogs&api_key=b25b959554ed76058ac220b7b2e0a026") 
+	val scrobblesXML = xml.XML.load("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=grogs&api_key=140959837de6932676a039ab4b312cb1")
 	val scrobbles = (scrobblesXML \ "recenttracks" \ "track") map { track =>
 	  new Scrobble(
 		  (track \ "date" \ "@uts").text.toLong,
