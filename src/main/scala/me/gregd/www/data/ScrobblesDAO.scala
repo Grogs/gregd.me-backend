@@ -1,6 +1,8 @@
 package me.gregd.www.data
 import javax.persistence._
 import me.gregd.www.model.Scrobble
+import util.Try
+import java.util.Date
 
 object ScrobblesDAO {
 
@@ -31,12 +33,12 @@ object ScrobblesDAO {
 	val scrobblesXML = xml.XML.load("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=grogs&api_key=140959837de6932676a039ab4b312cb1")
 	val scrobbles = (scrobblesXML \ "recenttracks" \ "track") map { track =>
 	  new Scrobble(
-		  (track \ "date" \ "@uts").text.toLong,
+		  Try((track \ "date" \ "@uts").text.toLong).getOrElse(0),
 		  (track \ "name" text),
 		  (track \ "album" text),
 		  track \ "artist" text,
 		  ((track \ "image").filter(_.attributes.exists(_.value.text equals "large")).text),
-		  track \ "date" text
+		  Try(track \ "date" text).getOrElse("")
 	  )
 	}
 	scrobbles.foreach(s =>
