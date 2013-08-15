@@ -1,7 +1,35 @@
 apply plugin: 'scala'
 apply plugin: 'idea'
+apply plugin:'application'
+//apply plugin: 'macAppBundle'
+
 
 version='1.0'
+mainClassName = "me.gregd.util.JettyStart"
+
+//macAppBundle {
+  //  mainClassName = "me.gregd.util.JettyStart"
+//}
+
+buildscript {
+    repositories {
+//        ivy {
+//            url "http://gradle-macappbundle.googlecode.com"
+//                artifactPattern 'http://gradle-macappbundle.googlecode.com/files/[module]-[revision].[ext]'
+//        }
+    }
+
+    dependencies {
+        //classpath 'edu.sc.seis:gradle-macappbundle:1.0.8'
+    }
+}
+
+
+//jar {
+//    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+//}
+
+
 
 repositories {
     mavenCentral()
@@ -48,7 +76,12 @@ dependencies {
 
     compile 'com.typesafe.akka:akka-actor_2.10:2.1.0'
 
-    compile 'com.novocode:junit-interface:0.10-M1:test'
+//    compile 'com.novocode:junit-interface:0.10-M1:test'
+
+    compile 'fi.reaktor:sqltyped_2.10:0.2.0'
+
+
+    compile 'javax.persistence:persistence-api:1.0.2'
 
 }
 
