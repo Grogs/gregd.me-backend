@@ -11,3 +11,8 @@ target/
 .history
 .project
 .settings/
+.gradle
+.idea
+build
+gregd.me-backend.iml
+gregd.me-backend.ipr
