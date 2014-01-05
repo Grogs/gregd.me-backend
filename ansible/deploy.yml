@@ -1,0 +1,43 @@
+---
+
+- hosts: gregd.me
+  user: grogs
+  sudo: True
+
+  vars:
+    app_name: gregd.me-backend
+    repo_url: https://github.com/Grogs/gregd.me-backend
+    repo_remote: origin
+    repo_version: master
+    webapps_dir: /srv/webapps
+    #wsgi_file: wsgi.py
+    #wsgi_callable: app
+
+  tasks:
+    - name: deploy code from repository
+      action: git repo=$repo_url dest=${webapps_dir}/${app_name} remote=$repo_remote version=$repo_version
+      notify:
+        - restart app
+
+    - name: create supervisor program config
+      action: template src=templates/supervisor.ini dest=/etc/supervisor/${app_name}.ini
+      notify:
+        - restart app
+
+    #- name: create nginx site config
+    #  action: template src=templates/nginx_site.conf dest=/etc/nginx/sites-available/${app_name}.conf
+    #  notify:
+    #    - restart nginx
+
+   # - name: link nginx config
+    #  action: file src=/etc/nginx/sites-available/${app_name}.conf dest=/etc/nginx/sites-enabled/${app_name}.conf state=link
+
+   # - name: start app
+   #   action: supervisorctl name=${app_name} state=started
+
+  handlers:
+    - name: restart app
+      action: supervisorctl name=${app_name} state=restarted
+
+    #- name: restart nginx
+     # action: service name=nginx state=restarted

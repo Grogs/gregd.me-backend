@@ -36,6 +36,17 @@ repositories {
     maven { url = 'http://repo.spray.io' }
 }
 
+//Deploy origin/master/HEAD to production using ansible. Expects passwordless login for 'grogs' to be setup.
+task deploy(type:Exec) {
+    environment ANSIBLE_FORCE_COLOR: 'true'
+    workingDir = './ansible'
+    executable = 'ansible-playbook'
+    args = [
+        '--inventory-file=hosts',
+        '--verbose',
+        'deploy.yml'
+    ]
+}
 
 dependencies {
 //    exclude 'javax.servlet:servlet-api:2.5'
